@@ -3,53 +3,56 @@
 Retrieval-Augmented Generation for Question-Answering on PDFs
 
 ## Overview
-This project guides you through building a Retrieval-Augmented Generation (RAG) system to answer questions based on uploaded PDF documents. You'll integrate a RAG solution and a user-friendly interface to achieve the following:
+This project levrages Langchain for piepline, weaviate for vectorDB and Stream it for UI.
 
+## Dependencies 
+- Python 3
+- PyPDF2 
+- Langchain
+- Weaviate
+- StreamIt
+
+## Functions 
 - PDF Upload and Indexing
+- PDF deletion
 - Vector-Based Retrieval
 - Question Answering
-- GUI Application
-- [Bonus] PDF Deletion
-- Demo: A reference demo using Vectara AI platform can be found here: https://github.com/forrestbao/vectara-python-cli.
 
-## RAG Solution & UI Frameworks
-You'll be assigned one RAG solution and one UI framework:
+## Usage Examples
 
-### RAG Solutions:
+### ! run all commands from cli with python integrated
 
-- Pinecone + Language Model (e.g., GPT-3.5) (without LangChain or LlamaIndex)
-- LangChain
-- LlamaIndex
+## A. PDF Operations
+1. `list.py`: Returns a list of all Uplaoded PDF's
+   `Usage`: `python3 list.py`
+    `Response`:
+        `on success` : `Returns a list of pdf files and the count`
+        `!successsful` : `Error: No PDF files present.`
 
-### UI Frameworks:
-- Streamlit
-- Gradio
-- Dash
-- Funix.io
+2. `upload.py`: Uploads a pdf to a document directory
+   `Usage`: `python3 upload.py --pdf_file=sample.pdf`
+    `Response`:
+        `on success` : 
+            ```
+            Upload successful! 
+            Uploaded path and filename: document/file_1_sample.pdf
+            ```
+        `!successsful` : `[Errno 2] No such file or directory`
 
-### Key Challenges
-- Optimal Text Chunking: Experiment with chunk sizes (e.g., 100, 200 words) with 25% overlap for best results.
-- Retrieval Efficiency: Retrieve the top 5 most relevant chunks.
+3. `retrieve.py`: Retrieves a pdf by name along with its content
+   `Usage`: `python3 retrieve.py --pdf_file=sample.pdf`
+    `Response`:
+        `on success` : `{'filename': 'sample.pdf', 'content': "lifelong"}`
+        `!successsful` : `Error: PDF file 'sample.pdf' not found in 'document'`
 
-## How to Submit
-- GitHub Repository: Create a public repo for your RAG and UI integration.
-- README Instructions: Provide clear instructions on running the demo.
-- Demo Walkthrough: Include instructions and video clips demonstrating each feature.
-
-## Presentation Video: Create a 5-minute video showcasing the system and the UI.
-[Bonus] Cloud Deployment: Deploy your demo for public testing.
-## Milestones
-- Feb. 28: GitHub repo setup.
-- March 7: Complete PDF upload/indexing via the command line (e.g., python upload.py --pdf_file=example.pdf) Include README and a demo video.
-- March 30: Implement query-based answer generation on the command line (e.g., python query.py --question="What is the meaning of life?") - - Provide README and a demo video.
-- April 20: Create the GUI app, integrating all features. Update README and produce a final demo video.
-## Tips
-- Answer Generation: Consider a smaller language model like Llama-2 for local execution (see resources).
-- Embedding: Use simple encoder models like BERT or sentence-transformers.
-## Tech Stack-Specific Tips
-- Pinecone: Refer to this demo (using GPT-3.5): https://github.com/pinecone-io/examples/blob/master/learn/generation/langchain/handbook/05-langchain-retrieval-augmentation.ipynb
-## References
-- LangChain: https://python.langchain.com/docs/modules/data_connection/
-- Google on RAGs: https://cloud.google.com/blog/products/ai-machine-learning/rags-powered-by-google-search-technology-part-1
-- Retrieval Augmented Generation: https://www.pinecone.io/learn/retrieval-augmented-generation/
-- Instructor's Semantic Search Demo: https://github.com/forrestbao/pebble/blob/master/NLP/semantic_search.ipynb
+4. `delete.py`: Deletes a pdf by name and returns the current dir count
+   `Usage`: `python3 delete.py --pdf_file=sample.pdf`
+    `Response`:
+        `on success` : `{'filename': 'sample.pdf', 'content': "lifelong"}`
+        `!successsful` : 
+            ```
+            PDF count before deletion: 2
+            PDF count after deletion: 1
+            sample.pdf deleted successfully.
+            ```
+## B. Pipe Line Operations
