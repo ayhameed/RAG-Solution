@@ -16,6 +16,7 @@ def delete(pdf_filename, documents_dir="document"):
 
     if not os.path.exists(filepath):
         return f"Error: PDF file '{pdf_filename}' not found in '{documents_dir}'."
+    
 
     # Get PDF count before deletion
     pdf_count_before = len([name for name in os.listdir(documents_dir) if name.lower().endswith('.pdf')])

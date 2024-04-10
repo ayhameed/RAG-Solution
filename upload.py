@@ -25,7 +25,7 @@ def upload(pdf_file):
 
     # Construct indexed filename 
     filename = os.path.basename(pdf_file)
-    indexed_filename = f"file_{file_index}_{filename}"
+    indexed_filename = f"file_{filename}"
     destination_path = os.path.join(upload_folder, indexed_filename)
 
     os.rename(pdf_file, destination_path)  # Move the file to the destination
