@@ -1,21 +1,22 @@
-# Project RAG (Spring 2024)
+# Retrieveal Augumented Generation (RAG)
 
 Retrieval-Augmented Generation for Question-Answering on PDFs
 
 ## Overview
-This project leverages Langchain for pipeline, Weaviate for vectorDB, and StreamIt for UI.
+This project leverages Langchain for pipeline, Langchain Vectors, and StreamIt for UI.
+
+## Language
+- Python 3
 
 ## Dependencies 
-- Python 3
-- python-dotenv
-- PyPDF2 
-- pypdf 
-- Faiss CPU
-- langchain-openai faiss-cpu 
+- python-dotenv [Documentation](https://pypi.org/project/python-dotenv/)
+- PyPDF2  [Documentation](https://pypdf2.readthedocs.io/)
+- pypdf  [Documentation](https://pypdf.readthedocs.io/en/latest/)
+- Faiss CPU [Documentation](https://faiss.ai/index.html)
+- langchain-openai faiss-cpu  [Documentation](https://python.langchain.com/docs/integrations/vectorstores/faiss)
 - Lang-chain [Documentation](https://python.langchain.com/docs)
-- LaNG-Chain OPENAI
-- Weaviate
-- StreamIt
+- LanG-Chain OPENAI [Documentation](https://python.langchain.com/docs/integrations/llms/openai/)
+- StreamIt [Documentation](https://docs.streamlit.io/)
 
 ## How to Install
 - Install all the dependencies:
