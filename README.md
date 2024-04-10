@@ -3,7 +3,7 @@
 Retrieval-Augmented Generation for Question-Answering on PDFs
 
 ## Overview
-This project leverages Langchain for pipeline, Langchain Vectors, and StreamIt for UI.
+This project provides a Retrieval-Augmented Generation (RAG) based solution for extracting answers from PDF documents. It Leverages LangChain for document processing and answer generation pipelines, LangChain Vectors for embedding, and Streamlit for the user interface.
 
 ## Language
 - Python 3
