@@ -1,1 +1,9 @@
-PyPDF2==3.0.1
+argparse
+faiss-cpu
+itertools
+langchain
+langchain-openai
+PyPDF2
+pypdf
+python-dotenv
+langchain-text-splitters
