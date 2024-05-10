@@ -1,16 +1,16 @@
 import os
 import argparse
 import warnings
-import langchain
-from langchain_text_splitters import Language, RecursiveCharacterTextSplitter
-from langchain_community.document_loaders import PyPDFLoader
-from dotenv import load_dotenv
-from langchain_community.vectorstores import FAISS
-from langchain_openai import OpenAIEmbeddings
-from langchain_community.document_loaders import TextLoader
-from langchain_openai import OpenAIEmbeddings
-from langchain_text_splitters import CharacterTextSplitter
-from langchain_community.vectorstores import FAISS
+import langchain  # type: ignore
+from langchain_text_splitters import Language, RecursiveCharacterTextSplitter  # type: ignore
+from langchain_community.document_loaders import PyPDFLoader  # type: ignore
+from dotenv import load_dotenv  # type: ignore
+from langchain_community.vectorstores import FAISS  # type: ignore
+from langchain_openai import OpenAIEmbeddings  # type: ignore
+from langchain_community.document_loaders import TextLoader  # type: ignore
+from langchain_openai import OpenAIEmbeddings  # type: ignore
+from langchain_text_splitters import CharacterTextSplitter  # type: ignore
+from langchain_community.vectorstores import FAISS  # type: ignore
 
 def query(question):
     """

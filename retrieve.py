@@ -1,5 +1,5 @@
 import argparse
-import PyPDF2
+import PyPDF2  # type: ignore
 import os
 
 def retrieve(pdf_filename, documents_dir="document"):

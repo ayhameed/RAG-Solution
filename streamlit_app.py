@@ -1,4 +1,4 @@
-import streamlit as st
+import streamlit as st # type: ignore
 import query
 import upload
 import list as list_module
