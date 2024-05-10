@@ -38,7 +38,7 @@ def query(question):
         
         db = FAISS.from_documents(documents, OpenAIEmbeddings())
 
-        docs = db.similarity_search(question, k=2)
+        docs = db.similarity_search(question, k=1)
 
         for doc in docs:
             code_splitter = RecursiveCharacterTextSplitter()
